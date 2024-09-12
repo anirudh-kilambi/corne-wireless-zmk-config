@@ -19,6 +19,11 @@
         jk_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <19 20>;
+        };,
+
+        kl_ent {
+            bindings = <&kp RET>;
+            key-positions = <20 21>;
         };
     };
 
