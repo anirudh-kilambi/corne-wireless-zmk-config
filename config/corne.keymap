@@ -13,6 +13,8 @@
     tapping-term-ms = <150>;
 };
 
+&sk { release-after-ms = <200>; };
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -41,7 +43,7 @@
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P                &kp BSPC
-&kp LCTRL  &mt LCMD A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H      &kp J  &kp K      &kp L    &mt RSHFT SEMICOLON  &kp SQT
+&sk LCTRL  &mt LCMD A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H      &kp J  &kp K      &kp L    &mt RSHFT SEMICOLON  &kp SQT
 &kp LSHFT  &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH             &kp RET
                                        &kp LGUI     &mo 1        &kp LCTRL    &kp SPACE  &mo 2  &kp RALT
             >;
