@@ -28,17 +28,7 @@
             bindings = <&kp ENTER>;
             key-positions = <21 20>;
         };
-
-     behaviors {
-        tmux: tmux {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TMUX";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp LC(B)>;
-
-            tapping-term-ms = <100>;
-        };
-    };   };
+    };
 
     keymap {
         compatible = "zmk,keymap";
