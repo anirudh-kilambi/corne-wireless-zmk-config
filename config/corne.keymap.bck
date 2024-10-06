@@ -30,17 +30,6 @@
         };
     };
 
-    behaviors {
-        tmux: tmux {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TMUX";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp LC(B)>;
-
-            tapping-term-ms = <100>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -69,9 +58,9 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0   &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans   &trans
-&kp LSHFT   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6    &kp F7    &kp F8    &kp F9     &kp F10  &trans
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8     &kp N9      &kp N0     &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &trans     &trans
+&kp LSHFT   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6    &kp F7    &kp COMMA  &kp PERIOD  &kp SLASH  &trans
                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
             >;
         };
@@ -90,6 +79,24 @@
 &kp LSHFT  &trans    &trans  &kp C_PLAY_PAUSE  &kp C_VOL_DN  &kp C_VOL_UP    &kp UNDER  &kp PLUS   &kp HOME          &kp END   &kp PIPE    &kp TILDE
                              &kp LGUI          &trans        &kp SPACE       &kp RET    &trans     &kp RALT
             >;
+        };
+
+        adjust_layer {
+            bindings = <
+&trans  &kp F11 &kp F12 &kp F13 &kp F14 &kp F15   &kp F16 &kp F17 &kp F18 &kp F19 &kp F20  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        ADJUST {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
